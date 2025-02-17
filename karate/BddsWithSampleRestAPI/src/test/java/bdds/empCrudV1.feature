@@ -1,4 +1,4 @@
-@mani
+#@mani
 Feature: hit my local api methods
   Background:  cfg base url
     Given url apiUrl

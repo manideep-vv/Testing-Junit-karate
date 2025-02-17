@@ -1,6 +1,13 @@
 function fn() {
+console.log("loading the js file")
   var env = karate.env; // get system property 'karate.env'
   karate.log('karate.env system property was:', env);
+
+  //Fetching other props from command
+  var pass=java.lang.System.getProperty("vcap.dbpass")
+  console.log("other var from cmd are ", pass)
+
+  java.lang.System.out.println("bro this log is from java sysout")
   if (!env) {
     env = 'dev';
   }

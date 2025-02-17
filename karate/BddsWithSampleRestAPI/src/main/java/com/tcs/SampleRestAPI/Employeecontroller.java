@@ -24,6 +24,7 @@ public class Employeecontroller {
 
     private void init() {
         token = UUID.randomUUID().toString();
+        System.out.println("configured token name is -->"+token);
         empList = new ArrayList<>();
         Employee s1 = new Employee(1, "manideep", 200, "2023-09-22T07:33:53.647");
         Employee s2 = new Employee(2, "santu", 300, "2022-09-22T07:33:53.647");

@@ -2,6 +2,7 @@ Feature: hit my local api methods
   Background:  cfg base url
     Given url apiUrl
     And path '/login'
+#    if u define var in js, u can fetch using '#()'
     And request {  "user":"#(usernameFromKarateJs)",  "password":"santu"  }
     When method Post
     Then status 200

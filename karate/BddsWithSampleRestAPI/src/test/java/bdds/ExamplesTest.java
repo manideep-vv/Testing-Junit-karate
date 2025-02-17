@@ -3,6 +3,7 @@ package bdds;
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
 import com.intuit.karate.junit5.Karate;
+import com.tcs.SampleRestAPI.SampleRestApiApplication;
 import org.junit.jupiter.api.Test;
 import com.intuit.karate.Runner;
 
@@ -16,12 +17,13 @@ import net.masterthought.cucumber.ReportBuilder;
 import org.apache.commons.io.FileUtils;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@SpringBootTest(classes = SampleRestApiApplication.class)
 class ExamplesTest {
 
     // this will run all *.feature files that exist in sub-directories
@@ -35,7 +37,7 @@ class ExamplesTest {
     public Karate testSpecificTags() {
 //        Map<String, Object> args = new HashMap();
 //        args.put("name", "World");
-
+        System.out.println("Running via junit test method");
 //        Runner.runFeature("classpath:bdds/empCrudv1.feature", args, true);
         Karate dynamicNodes = Karate.run().tags("@mani").outputCucumberJson(true).relativeTo(getClass());
         return dynamicNodes;
